@@ -1,31 +1,32 @@
-import React from "react";
+import React from "react"
 import {
   StyleSheet,
   SafeAreaView,
   ScrollView,
   Linking,
-  Alert
-} from "react-native";
-import { Entypo } from "@expo/vector-icons";
-import colors from "../constants/colors";
-import { RowItem, RowSeparator } from "../components/RowItem";
+  Alert,
+  StatusBar,
+} from "react-native"
+import { Entypo } from "@expo/vector-icons"
+import colors from "../constants/colors"
+import { RowItem, RowSeparator } from "../components/RowItem"
 
 const styles = StyleSheet.create({
   view: {
-    marginTop: 32,
-    flex: 1
-  }
-});
+    flex: 1,
+  },
+})
 
-const openURL = url => {
+const openURL = (url) => {
   return Linking.openURL(url).catch(() => {
-    Alert.alert("Something went wrong", "Try again later");
-  });
-};
+    Alert.alert("Something went wrong", "Try again later")
+  })
+}
 
 export default () => {
   return (
     <SafeAreaView style={styles.view}>
+      <StatusBar barStyle="dark-content" backgroundColor={colors.white} />
       <ScrollView>
         <RowItem
           text="Themes"
@@ -52,5 +53,5 @@ export default () => {
         />
       </ScrollView>
     </SafeAreaView>
-  );
-};
+  )
+}
