@@ -1,0 +1,2 @@
+do last part of module 8 with loading screen.
+possible unhandled promise rejection for api calls
